@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="简介一直想搞一个属于自己的博客，趁着当下没有什么必要之事，折腾了一天多，才有了我的这第一篇博客。在这里简单记录一下博客的搭建过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的第一篇博客">
+<meta property="og:url" content="http://example.com/2022/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="彼岸">
+<meta property="og:description" content="简介一直想搞一个属于自己的博客，趁着当下没有什么必要之事，折腾了一天多，才有了我的这第一篇博客。在这里简单记录一下博客的搭建过程。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-18T09:37:45.000Z">
+<meta property="article:modified_time" content="2025-02-27T16:00:00.000Z">
+<meta property="article:author" content="Zhentao He">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/","path":"2022/07/18/我的第一篇博客/","title":"我的第一篇博客"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>我的第一篇博客 | 彼岸</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">彼岸</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Life is just a game; we pursue nothing but happiness.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-number">2.</span> <span class="nav-text">框架的选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E2%80%9C%E5%9D%91%E2%80%9D"><span class="nav-number">3.1.</span> <span class="nav-text">Node.js环境配置的一些“坑”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">更换博客主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6deploy%E5%88%B0Github"><span class="nav-number">3.3.</span> <span class="nav-text">本地文件deploy到Github</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%9A%84%E5%86%99%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">博客文章的写作</span></a></li></ol></div>
+        </div>
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhentao He"
+      src="/assets/icon_1.jpg">
+  <p class="site-author-name" itemprop="name">Zhentao He</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/icon_1.jpg">
+      <meta itemprop="name" content="Zhentao He">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="彼岸">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="我的第一篇博客 | 彼岸">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          我的第一篇博客
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-18 17:37:45" itemprop="dateCreated datePublished" datetime="2022-07-18T17:37:45+08:00">2022-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-02-28 00:00:00" itemprop="dateModified" datetime="2025-02-28T00:00:00+08:00">2025-02-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一直想搞一个属于自己的博客，趁着当下没有什么必要之事，折腾了一天多，才有了我的这第一篇博客。在这里简单记录一下博客的搭建过程。</p>
+<span id="more"></span>
+<h1 id="框架的选择"><a href="#框架的选择" class="headerlink" title="框架的选择"></a>框架的选择</h1><p>搭建个人博客的方式有很多，目前主流的方法可以参考一下b站视频<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cv411N7kz?share_source=copy_web">《搭博客到底选什么框架？》</a>。<br>本人不想掏钱（大部分博客都需花钱要租服务器），并且最近时间多、能折腾，于是选择Hexo+Github方式搭建博客。</p>
+<h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p>具体的过程可以参考b站视频<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mU4y1j72n?share_source=copy_web">《保姆级Hexo+github搭建个人博客》</a>。不过这是一个2021年8月的视频，视频中的文本文件已经挂掉了，因此我下面再补充一些细节。（原视频已被删除，新的教程参考<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jVEv9jHV3WS5nAkVOmAcng">《听说创客们都有这样一个自己的博客》</a>）</p>
+<h2 id="Node-js环境配置的一些“坑”"><a href="#Node-js环境配置的一些“坑”" class="headerlink" title="Node.js环境配置的一些“坑”"></a>Node.js环境配置的一些“坑”</h2><p>Node.js的安装很简单，“傻瓜式”安装（一直点NEXT）即可。</p>
+<p>但是安装好后会发现，只要在命令行中使用npm命令（如使用<code>npm -v</code>查询版本信息）就会有警告：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.</span><br></pre></td></tr></table></figure>
+<p>这是由于npm和node的版本不对应，网上有很多解决办法。但是“警告可以不管”，其实上后面没发现该警告会产生什么大问题。</p>
+<p>安装好Node.js后需要干的事情是，修改npm全局包的默认安装路径和缓存路径[^1]。<br>这是因为之前的我们“傻瓜式”安装Node.js时把该路径设置在了C盘（<code>C:\Users\your_username\AppData\Roaming\npm</code>和<code>C:\Users\your_username\AppData\Local\npm-cache</code>），如果不想C盘中有太多文件，则需要对它们进行修改。</p>
+<p>为方便，通常在Node.js的安装根目录（以<code>x:\xx</code>示意）下创建名为<code>node_global</code>和<code>node_cache</code>的文件夹，并在命令行中分别执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix x:\xx\node_global</span><br><span class="line">npm config set cache x:\xx\node_cache</span><br></pre></td></tr></table></figure>
+<p>然后我们还要更新<strong>用户环境变量</strong>Path中全局包的安装路径的值，即把原有的 <code>C:\Users\your_username\AppData\Roaming\npm</code>改为<code>x:\xx\node_global</code>。<br>需要补充的是，网上许多Node.js安装教程说还要修改<strong>系统变量</strong>，其实上我们这里没有这个需要。</p>
+<p>修改好全局安装路径和缓存路径后，便可使用npm安装Hexo，即在命令行中执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>执行这条指令后，有可能会报一长串的错误，其错误代码为4048：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! errno -4048</span><br></pre></td></tr></table></figure>
+<p>这实际上是因为我们上一步修改后的全局安装路径和缓存路径对于普通用户没有完全控制的权限，解决办法见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangzhihuang/p/15136934.html">《NodeJS安装、NPM依赖路径及NPM INSTALL ERROR 4048解决》</a>。<br>网上还有一种说法是缓存问题导致的错误，需要删除配置文件<code>C:\Users\your_username\.npmrc</code>，并执行<code>npm cache clean --force</code>，这种办法虽然也能解决问题，但是配置文件<code>.npmrc</code>里存放了我们当前的全局安装路径和缓存路径，删掉前面就白改了，故不建议使用。</p>
+<h2 id="更换博客主题"><a href="#更换博客主题" class="headerlink" title="更换博客主题"></a>更换博客主题</h2><p>hexo默认主题为landscape，本博客目前的主题为stun，需要安装Pug渲染插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug</span><br></pre></td></tr></table></figure>
+<p>并且安装了计词器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install wordcount</span><br></pre></td></tr></table></figure>
+<p>清理缓存并重新生成静态文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate</span><br></pre></td></tr></table></figure>
+<p>然后，就能在本地服务器查看新主题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地文件deploy到Github"><a href="#本地文件deploy到Github" class="headerlink" title="本地文件deploy到Github"></a>本地文件deploy到Github</h2><p>按照视频教程，在第一次执行命令<code>$ hexo d</code>时，可能会遇到Author identity unknown的错误，解决办法也很简单，在git命令行中执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name “你的github用户名”</span><br><span class="line">$ git config --global user.email “你的邮箱地址”</span><br></pre></td></tr></table></figure>
+<p>即可。</p>
+<h1 id="博客文章的写作"><a href="#博客文章的写作" class="headerlink" title="博客文章的写作"></a>博客文章的写作</h1><p>可以参见Hexo的官方帮助文档。</p>
+<p>文章文件的格式为<code>.md</code>，为Markdown文件，有很多很好的Markdown编辑器，我选择的是免费开源的VS Code，可以安装一些强力的插件来满足我们不同的需求[^2]。</p>
+<p>Markdownd的语法也容易上手，可参考b站视频<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JA411h7Gw?share_source=copy_web">《8分钟让你快速掌握Markdown》</a>。<br>这里再补充一点Markdown语法的细节：</p>
+<ul>
+<li>标题命令’#’后要有一空格</li>
+<li>无序列表’-‘后也要有一空格</li>
+<li>Markdown 基本语法中并不包含脚注语法，在Hexo中脚注的显示会有问题，需要安装新的模块[^3]。</li>
+</ul>
+<p>[^1]: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/469626943">修改 npm 全局包的默认安装路径——知乎文章</a><br>[^2]: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/501813614/answer/2534043451">Typora 收费了，你还会继续选择使用它吗？ - 三分恶的回答 - 知乎</a><br>[^3]: <a target="_blank" rel="noopener" href="https://kchen.cc/2016/11/10/footnotes-in-hexo/#fn:4">Hexo 里的脚注插件</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Github/" rel="tag"># Github</a>
+              <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/09/17/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%20BibTeX%20%E5%B7%A5%E5%85%B7/" rel="next" title="参考文献和BibTeX工具">
+                  参考文献和BibTeX工具 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zhentao He</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

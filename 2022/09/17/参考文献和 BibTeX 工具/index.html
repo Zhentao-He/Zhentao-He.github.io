@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="The 3rd seminar on $\LaTeX$ in class 20220305">
+<meta property="og:type" content="article">
+<meta property="og:title" content="参考文献和BibTeX工具">
+<meta property="og:url" content="http://example.com/2022/09/17/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%20BibTeX%20%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:site_name" content="彼岸">
+<meta property="og:description" content="The 3rd seminar on $\LaTeX$ in class 20220305">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-17T16:00:00.000Z">
+<meta property="article:author" content="Zhentao He">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/09/17/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%20BibTeX%20%E5%B7%A5%E5%85%B7/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/09/17/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%20BibTeX%20%E5%B7%A5%E5%85%B7/","path":"2022/09/17/参考文献和 BibTeX 工具/","title":"参考文献和BibTeX工具"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>参考文献和BibTeX工具 | 彼岸</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">彼岸</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Life is just a game; we pursue nothing but happiness.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+              <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">基本的参考文献和引用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">1.1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">引用方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BibTeX-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">BibTeX 数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BibTeX-%E6%96%87%E7%8C%AE%E6%9D%A1%E7%9B%AE%E7%9A%84%E5%AF%BC%E5%87%BA%E3%80%81%E5%AF%BC%E5%85%A5%E5%8F%8A%E7%AE%A1%E7%90%86"><span class="nav-number">2.1.</span> <span class="nav-text">BibTeX 文献条目的导出、导入及管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BibTeX-%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">BibTeX 样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8BibTeX%E6%8E%92%E7%89%88%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">2.3.</span> <span class="nav-text">使用BibTeX排版参考文献</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%AE%8F%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">相关宏包</span></a></li></ol></div>
+        </div>
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhentao He"
+      src="/assets/icon_1.jpg">
+  <p class="site-author-name" itemprop="name">Zhentao He</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%20BibTeX%20%E5%B7%A5%E5%85%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/icon_1.jpg">
+      <meta itemprop="name" content="Zhentao He">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="彼岸">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="参考文献和BibTeX工具 | 彼岸">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          参考文献和BibTeX工具
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-17 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-17T00:00:00+08:00">2022-09-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-18 00:00:00" itemprop="dateModified" datetime="2022-09-18T00:00:00+08:00">2022-09-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>The 3rd seminar on $\LaTeX$ in class 20220305</p>
+<span id="more"></span>
+<h1 id="基本的参考文献和引用"><a href="#基本的参考文献和引用" class="headerlink" title="基本的参考文献和引用"></a>基本的参考文献和引用</h1><ul>
+<li>LaTeX提供的参考文献和引用方式</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>参考文献由 <code>thebibliography</code> 环境包裹。</li>
+<li>每条参考文献由 <code>\bibitem</code> 开头，其后是参考文献本身的内容</li>
+<li>需要用户<strong>自行</strong>书写参考文献列表</li>
+</ul>
+<p>语法格式：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;thebibliography&#125;&#123;⟨widest label⟩&#125;</span><br><span class="line"><span class="keyword">\bibitem</span>[⟨item number⟩]&#123;⟨citation⟩&#125; </span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>&#123;thebibliography&#125;</span><br></pre></td></tr></table></figure>
+<p>参数说明:</p>
+<ul>
+<li><code>⟨widest label⟩</code> 用以限制参考文献序号的宽度，通常设定为与参考文献的数目一致</li>
+<li><code>⟨item number⟩</code> 参考文献的序号，可选项，默认自然排序</li>
+<li><code>⟨citation⟩</code> 文献标签，用以引用（不要重复）</li>
+</ul>
+<p>效果：</p>
+<ul>
+<li>生成不带编号的一节，其标题默认为 <em>Reference</em>（<code>article</code> 类文档），列出<code>thebibliography</code> 环境中所有的<code>\bibitem</code></li>
+</ul>
+<h2 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h2><ul>
+<li>在文中使用<code>\cite</code>命令<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\cite</span>[⟨addtional content⟩]&#123;⟨citation⟩&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="BibTeX-数据库"><a href="#BibTeX-数据库" class="headerlink" title="BibTeX 数据库"></a>BibTeX 数据库</h1><ul>
+<li>BibTeX是一种参考文献数据组织格式</li>
+<li>无需自行手写参考文献条目</li>
+</ul>
+<p>BibTeX数据库以<code>.bib</code>作为扩展名，其内容为若干个<strong>文献条目</strong>，每个条目的格式为：  </p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@⟨type⟩&#123;⟨citation⟩,</span><br><span class="line">⟨key1⟩ = &#123;⟨value1⟩&#125;,</span><br><span class="line">⟨key2⟩ = &#123;⟨value2⟩&#125;,</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数说明:</p>
+<ul>
+<li><code>⟨type⟩</code> 为文献的类别，如<code>article</code>为学术论文，<code>book</code>为书籍，等等…</li>
+<li><code>⟨citation⟩</code> 文献标签（primary key）</li>
+<li><code>⟨key⟩ = &#123;⟨value⟩&#125;</code> 包含有文献条目信息的字段：<ol>
+<li><code>article</code> 学术论文<br>必需字段有 <code>author</code>, <code>title</code>, <code>journal</code>, <code>year</code>; 可选字段包括 <code>volume</code>, <code>number</code>, <code>pages</code>, <code>doi</code> 等；</li>
+<li><code>book</code> 书籍<br> 必需字段有 <code>author/editor</code>, <code>title</code>, <code>publisher</code>, <code>year</code>; 可选字段包括 <code>volume/number</code>, <code>series</code>, <code>address</code> 等；</li>
+</ol>
+</li>
+</ul>
+<h2 id="BibTeX-文献条目的导出、导入及管理"><a href="#BibTeX-文献条目的导出、导入及管理" class="headerlink" title="BibTeX 文献条目的导出、导入及管理"></a>BibTeX 文献条目的导出、导入及管理</h2><p>  期刊&#x2F;数据库的网站上一般都能够导出 BibTeX 文献条目，如</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://journals.aps.org/">PHYSICAL REVIEW JOURNALS</a></li>
+<li><a target="_blank" rel="noopener" href="https://inspirehep.net/">INSPIRE</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/">arXiv</a>, <a target="_blank" rel="noopener" href="https://arxiv2bibtex.org/">arXiv To BibTex</a></li>
+</ul>
+<p>支持BibTeX格式文献管理软件:</p>
+<ul>
+<li>开源软件 <a target="_blank" rel="noopener" href="https://www.jabref.org/">JabRef</a><ul>
+<li>导入：直接粘贴、内置网页搜索、doi搜索…</li>
+</ul>
+</li>
+<li>EndNote</li>
+</ul>
+<h2 id="BibTeX-样式"><a href="#BibTeX-样式" class="headerlink" title="BibTeX 样式"></a>BibTeX 样式</h2><ul>
+<li>BibTeX用<strong>样式</strong>管理参考文献的格式</li>
+<li>样式文件以 <code>.bst</code> 为扩展名</li>
+<li>BibTeX提供8种预定义的样式[^1][^2]</li>
+<li>有的期刊模板会提供自用的样式[^3][^4]</li>
+</ul>
+<h2 id="使用BibTeX排版参考文献"><a href="#使用BibTeX排版参考文献" class="headerlink" title="使用BibTeX排版参考文献"></a>使用BibTeX排版参考文献</h2><ul>
+<li>1 为方便，一般将<code>.bib</code>文件、<code>.tex</code>文件和<code>.bst</code>文件（如果使用了8种预定义样式以外的样式）放在同一目录下。</li>
+<li>2 在<code>.tex</code>文件种使用必要的命令：<ul>
+<li>2.1 指定样式<br>在导言区或<code>document</code>环境内使用 <code>\bibliographystyle</code> 命令调用样式文件<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\bibliographystyle</span>&#123;⟨bst-name⟩&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>⟨bst-name⟩</code>为样式文件的名称，但注意不要带<code>.bst </code>拓展名。</li>
+</ul>
+</li>
+<li>2.2 列出参考文献<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\bibliography</span>&#123;⟨bib-name⟩&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>⟨bib-name⟩</code>为数据库文件的名称，但注意不要带<code>.bib </code>拓展名。</li>
+<li>相当于<code>thebibliography</code> 环境</li>
+</ul>
+</li>
+<li>2.3 引用文献<br><code>\cite&#123;⟨citation⟩&#125;</code> 注意没有被<code>\cite</code>的文献不会出现在 <em>Reference</em><br><code>\nocite&#123;⟨citation⟩&#125;</code> 列出某篇未被<code>\cite</code>的文献<br><code>\nocite&#123;*&#125;</code> 列出所有未被<code>\cite</code>的文献<ul>
+<li><code>\nocite</code>可以写在<code>document</code>环境中的任意地方</li>
+<li><code>\nocite&#123;*&#125;</code>的位置会影响所有文献排列的方式[^2]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3 编译<ul>
+<li>将带有BibTeX的<code>.tex</code>生成为一个pdf文件，通常需要编译多次。</li>
+<li>使用<code>latexmk</code>命令编译可以一键到位</li>
+</ul>
+</li>
+</ul>
+<h1 id="相关宏包"><a href="#相关宏包" class="headerlink" title="相关宏包"></a>相关宏包</h1><ul>
+<li><code>cite</code> 宏包：实现多个参考文献的连续引用（中间用连字符链接）<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\cite</span>&#123;ref1,ref2,ref3&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>hyperref</code> 宏包：在引用处设置超链接（容易与其他宏包冲突，所以一般放在<br>其它宏包之后调用） <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[colorlinks,urlcolor=blue,linkcolor=blue,citecolor=blue]&#123;hyperref&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>natbib</code>宏包：提供“人名—年份”的引用方式 </li>
+<li><code>biblatex</code>宏包：对 UTF-8 和中文参考文献支持良好<br>[^1]:<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41738030/article/details/104704554">LaTeX参考文献样式——bibliographystyle</a><br><br>[^2]:<a target="_blank" rel="noopener" href="http://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf" title="官方说明文档"><code>btxdoc.pdf</code></a><br>[^3]:<a target="_blank" rel="noopener" href="https://jhep.sissa.it/jhep/help/JHEP_TeXclass.jsp">JHEP</a><br><br>[^4]:<a target="_blank" rel="noopener" href="https://blog.csdn.net/YoloLiu/article/details/119610568">下载PHYSICAL REVIEW JOURNALS的TEX模板</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LaTeX/" rel="tag"># LaTeX</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev" title="我的第一篇博客">
+                  <i class="fa fa-angle-left"></i> 我的第一篇博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/02/28/Cluster/" rel="next" title="Cluster">
+                  Cluster <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zhentao He</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
