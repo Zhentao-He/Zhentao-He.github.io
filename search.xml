@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>参考文献和BibTeX工具</title>
+    <url>/2022/09/17/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%20BibTeX%20%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<p>The 3rd seminar on $\LaTeX$ in class 20220305</p>
+<span id="more"></span>
+<h1 id="基本的参考文献和引用"><a href="#基本的参考文献和引用" class="headerlink" title="基本的参考文献和引用"></a>基本的参考文献和引用</h1><ul>
+<li>LaTeX提供的参考文献和引用方式</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>参考文献由 <code>thebibliography</code> 环境包裹。</li>
+<li>每条参考文献由 <code>\bibitem</code> 开头，其后是参考文献本身的内容</li>
+<li>需要用户<strong>自行</strong>书写参考文献列表</li>
+</ul>
+<p>语法格式：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;thebibliography&#125;&#123;⟨widest label⟩&#125;</span><br><span class="line"><span class="keyword">\bibitem</span>[⟨item number⟩]&#123;⟨citation⟩&#125; </span><br><span class="line">...</span><br><span class="line"><span class="keyword">\end</span>&#123;thebibliography&#125;</span><br></pre></td></tr></table></figure>
+<p>参数说明:</p>
+<ul>
+<li><code>⟨widest label⟩</code> 用以限制参考文献序号的宽度，通常设定为与参考文献的数目一致</li>
+<li><code>⟨item number⟩</code> 参考文献的序号，可选项，默认自然排序</li>
+<li><code>⟨citation⟩</code> 文献标签，用以引用（不要重复）</li>
+</ul>
+<p>效果：</p>
+<ul>
+<li>生成不带编号的一节，其标题默认为 <em>Reference</em>（<code>article</code> 类文档），列出<code>thebibliography</code> 环境中所有的<code>\bibitem</code></li>
+</ul>
+<h2 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h2><ul>
+<li>在文中使用<code>\cite</code>命令<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\cite</span>[⟨addtional content⟩]&#123;⟨citation⟩&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="BibTeX-数据库"><a href="#BibTeX-数据库" class="headerlink" title="BibTeX 数据库"></a>BibTeX 数据库</h1><ul>
+<li>BibTeX是一种参考文献数据组织格式</li>
+<li>无需自行手写参考文献条目</li>
+</ul>
+<p>BibTeX数据库以<code>.bib</code>作为扩展名，其内容为若干个<strong>文献条目</strong>，每个条目的格式为：  </p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">@⟨type⟩&#123;⟨citation⟩,</span><br><span class="line">⟨key1⟩ = &#123;⟨value1⟩&#125;,</span><br><span class="line">⟨key2⟩ = &#123;⟨value2⟩&#125;,</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数说明:</p>
+<ul>
+<li><code>⟨type⟩</code> 为文献的类别，如<code>article</code>为学术论文，<code>book</code>为书籍，等等…</li>
+<li><code>⟨citation⟩</code> 文献标签（primary key）</li>
+<li><code>⟨key⟩ = &#123;⟨value⟩&#125;</code> 包含有文献条目信息的字段：<ol>
+<li><code>article</code> 学术论文<br>必需字段有 <code>author</code>, <code>title</code>, <code>journal</code>, <code>year</code>; 可选字段包括 <code>volume</code>, <code>number</code>, <code>pages</code>, <code>doi</code> 等；</li>
+<li><code>book</code> 书籍<br> 必需字段有 <code>author/editor</code>, <code>title</code>, <code>publisher</code>, <code>year</code>; 可选字段包括 <code>volume/number</code>, <code>series</code>, <code>address</code> 等；</li>
+</ol>
+</li>
+</ul>
+<h2 id="BibTeX-文献条目的导出、导入及管理"><a href="#BibTeX-文献条目的导出、导入及管理" class="headerlink" title="BibTeX 文献条目的导出、导入及管理"></a>BibTeX 文献条目的导出、导入及管理</h2><p>  期刊&#x2F;数据库的网站上一般都能够导出 BibTeX 文献条目，如</p>
+<ul>
+<li><a href="https://journals.aps.org/">PHYSICAL REVIEW JOURNALS</a></li>
+<li><a href="https://inspirehep.net/">INSPIRE</a></li>
+<li><a href="https://arxiv.org/">arXiv</a>, <a href="https://arxiv2bibtex.org/">arXiv To BibTex</a></li>
+</ul>
+<p>支持BibTeX格式文献管理软件:</p>
+<ul>
+<li>开源软件 <a href="https://www.jabref.org/">JabRef</a><ul>
+<li>导入：直接粘贴、内置网页搜索、doi搜索…</li>
+</ul>
+</li>
+<li>EndNote</li>
+</ul>
+<h2 id="BibTeX-样式"><a href="#BibTeX-样式" class="headerlink" title="BibTeX 样式"></a>BibTeX 样式</h2><ul>
+<li>BibTeX用<strong>样式</strong>管理参考文献的格式</li>
+<li>样式文件以 <code>.bst</code> 为扩展名</li>
+<li>BibTeX提供8种预定义的样式[^1][^2]</li>
+<li>有的期刊模板会提供自用的样式[^3][^4]</li>
+</ul>
+<h2 id="使用BibTeX排版参考文献"><a href="#使用BibTeX排版参考文献" class="headerlink" title="使用BibTeX排版参考文献"></a>使用BibTeX排版参考文献</h2><ul>
+<li>1 为方便，一般将<code>.bib</code>文件、<code>.tex</code>文件和<code>.bst</code>文件（如果使用了8种预定义样式以外的样式）放在同一目录下。</li>
+<li>2 在<code>.tex</code>文件种使用必要的命令：<ul>
+<li>2.1 指定样式<br>在导言区或<code>document</code>环境内使用 <code>\bibliographystyle</code> 命令调用样式文件<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\bibliographystyle</span>&#123;⟨bst-name⟩&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>⟨bst-name⟩</code>为样式文件的名称，但注意不要带<code>.bst </code>拓展名。</li>
+</ul>
+</li>
+<li>2.2 列出参考文献<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\bibliography</span>&#123;⟨bib-name⟩&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>⟨bib-name⟩</code>为数据库文件的名称，但注意不要带<code>.bib </code>拓展名。</li>
+<li>相当于<code>thebibliography</code> 环境</li>
+</ul>
+</li>
+<li>2.3 引用文献<br><code>\cite&#123;⟨citation⟩&#125;</code> 注意没有被<code>\cite</code>的文献不会出现在 <em>Reference</em><br><code>\nocite&#123;⟨citation⟩&#125;</code> 列出某篇未被<code>\cite</code>的文献<br><code>\nocite&#123;*&#125;</code> 列出所有未被<code>\cite</code>的文献<ul>
+<li><code>\nocite</code>可以写在<code>document</code>环境中的任意地方</li>
+<li><code>\nocite&#123;*&#125;</code>的位置会影响所有文献排列的方式[^2]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3 编译<ul>
+<li>将带有BibTeX的<code>.tex</code>生成为一个pdf文件，通常需要编译多次。</li>
+<li>使用<code>latexmk</code>命令编译可以一键到位</li>
+</ul>
+</li>
+</ul>
+<h1 id="相关宏包"><a href="#相关宏包" class="headerlink" title="相关宏包"></a>相关宏包</h1><ul>
+<li><code>cite</code> 宏包：实现多个参考文献的连续引用（中间用连字符链接）<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\cite</span>&#123;ref1,ref2,ref3&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>hyperref</code> 宏包：在引用处设置超链接（容易与其他宏包冲突，所以一般放在<br>其它宏包之后调用） <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[colorlinks,urlcolor=blue,linkcolor=blue,citecolor=blue]&#123;hyperref&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>natbib</code>宏包：提供“人名—年份”的引用方式 </li>
+<li><code>biblatex</code>宏包：对 UTF-8 和中文参考文献支持良好<br>[^1]:<a href="https://blog.csdn.net/weixin_41738030/article/details/104704554">LaTeX参考文献样式——bibliographystyle</a><br><br>[^2]:<a href="http://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf" title="官方说明文档"><code>btxdoc.pdf</code></a><br>[^3]:<a href="https://jhep.sissa.it/jhep/help/JHEP_TeXclass.jsp">JHEP</a><br><br>[^4]:<a href="https://blog.csdn.net/YoloLiu/article/details/119610568">下载PHYSICAL REVIEW JOURNALS的TEX模板</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2022/07/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一直想搞一个属于自己的博客，趁着当下没有什么必要之事，折腾了一天多，才有了我的这第一篇博客。在这里简单记录一下博客的搭建过程。</p>
+<span id="more"></span>
+<h1 id="框架的选择"><a href="#框架的选择" class="headerlink" title="框架的选择"></a>框架的选择</h1><p>搭建个人博客的方式有很多，目前主流的方法可以参考一下b站视频<a href="https://www.bilibili.com/video/BV1cv411N7kz?share_source=copy_web">《搭博客到底选什么框架？》</a>。<br>本人不想掏钱（大部分博客都需花钱要租服务器），并且最近时间多、能折腾，于是选择Hexo+Github方式搭建博客。</p>
+<h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p>具体的过程可以参考b站视频<a href="https://www.bilibili.com/video/BV1mU4y1j72n?share_source=copy_web">《保姆级Hexo+github搭建个人博客》</a>。不过这是一个2021年8月的视频，视频中的文本文件已经挂掉了，因此我下面再补充一些细节。（原视频已被删除，新的教程参考<a href="https://mp.weixin.qq.com/s/jVEv9jHV3WS5nAkVOmAcng">《听说创客们都有这样一个自己的博客》</a>）</p>
+<h2 id="Node-js环境配置的一些“坑”"><a href="#Node-js环境配置的一些“坑”" class="headerlink" title="Node.js环境配置的一些“坑”"></a>Node.js环境配置的一些“坑”</h2><p>Node.js的安装很简单，“傻瓜式”安装（一直点NEXT）即可。</p>
+<p>但是安装好后会发现，只要在命令行中使用npm命令（如使用<code>npm -v</code>查询版本信息）就会有警告：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.</span><br></pre></td></tr></table></figure>
+<p>这是由于npm和node的版本不对应，网上有很多解决办法。但是“警告可以不管”，其实上后面没发现该警告会产生什么大问题。</p>
+<p>安装好Node.js后需要干的事情是，修改npm全局包的默认安装路径和缓存路径[^1]。<br>这是因为之前的我们“傻瓜式”安装Node.js时把该路径设置在了C盘（<code>C:\Users\your_username\AppData\Roaming\npm</code>和<code>C:\Users\your_username\AppData\Local\npm-cache</code>），如果不想C盘中有太多文件，则需要对它们进行修改。</p>
+<p>为方便，通常在Node.js的安装根目录（以<code>x:\xx</code>示意）下创建名为<code>node_global</code>和<code>node_cache</code>的文件夹，并在命令行中分别执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set prefix x:\xx\node_global</span><br><span class="line">npm config set cache x:\xx\node_cache</span><br></pre></td></tr></table></figure>
+<p>然后我们还要更新<strong>用户环境变量</strong>Path中全局包的安装路径的值，即把原有的 <code>C:\Users\your_username\AppData\Roaming\npm</code>改为<code>x:\xx\node_global</code>。<br>需要补充的是，网上许多Node.js安装教程说还要修改<strong>系统变量</strong>，其实上我们这里没有这个需要。</p>
+<p>修改好全局安装路径和缓存路径后，便可使用npm安装Hexo，即在命令行中执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>执行这条指令后，有可能会报一长串的错误，其错误代码为4048：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm ERR! errno -4048</span><br></pre></td></tr></table></figure>
+<p>这实际上是因为我们上一步修改后的全局安装路径和缓存路径对于普通用户没有完全控制的权限，解决办法见<a href="https://www.cnblogs.com/wangzhihuang/p/15136934.html">《NodeJS安装、NPM依赖路径及NPM INSTALL ERROR 4048解决》</a>。<br>网上还有一种说法是缓存问题导致的错误，需要删除配置文件<code>C:\Users\your_username\.npmrc</code>，并执行<code>npm cache clean --force</code>，这种办法虽然也能解决问题，但是配置文件<code>.npmrc</code>里存放了我们当前的全局安装路径和缓存路径，删掉前面就白改了，故不建议使用。</p>
+<h2 id="更换博客主题"><a href="#更换博客主题" class="headerlink" title="更换博客主题"></a>更换博客主题</h2><p>hexo默认主题为landscape，本博客目前的主题为stun，需要安装Pug渲染插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug</span><br></pre></td></tr></table></figure>
+<p>并且安装了计词器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install wordcount</span><br></pre></td></tr></table></figure>
+<p>清理缓存并重新生成静态文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate</span><br></pre></td></tr></table></figure>
+<p>然后，就能在本地服务器查看新主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地文件deploy到Github"><a href="#本地文件deploy到Github" class="headerlink" title="本地文件deploy到Github"></a>本地文件deploy到Github</h2><p>按照视频教程，在第一次执行命令<code>$ hexo d</code>时，可能会遇到Author identity unknown的错误，解决办法也很简单，在git命令行中执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name “你的github用户名”</span><br><span class="line">$ git config --global user.email “你的邮箱地址”</span><br></pre></td></tr></table></figure>
+<p>即可。</p>
+<h1 id="博客文章的写作"><a href="#博客文章的写作" class="headerlink" title="博客文章的写作"></a>博客文章的写作</h1><p>可以参见Hexo的官方帮助文档。</p>
+<p>文章文件的格式为<code>.md</code>，为Markdown文件，有很多很好的Markdown编辑器，我选择的是免费开源的VS Code，可以安装一些强力的插件来满足我们不同的需求[^2]。</p>
+<p>Markdownd的语法也容易上手，可参考b站视频<a href="https://www.bilibili.com/video/BV1JA411h7Gw?share_source=copy_web">《8分钟让你快速掌握Markdown》</a>。<br>这里再补充一点Markdown语法的细节：</p>
+<ul>
+<li>标题命令’#’后要有一空格</li>
+<li>无序列表’-‘后也要有一空格</li>
+<li>Markdown 基本语法中并不包含脚注语法，在Hexo中脚注的显示会有问题，需要安装新的模块[^3]。</li>
+</ul>
+<p>[^1]: <a href="https://zhuanlan.zhihu.com/p/469626943">修改 npm 全局包的默认安装路径——知乎文章</a><br>[^2]: <a href="https://www.zhihu.com/question/501813614/answer/2534043451">Typora 收费了，你还会继续选择使用它吗？ - 三分恶的回答 - 知乎</a><br>[^3]: <a href="https://kchen.cc/2016/11/10/footnotes-in-hexo/#fn:4">Hexo 里的脚注插件</a></p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+        <tag>Node.js</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+</search>
